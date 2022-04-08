@@ -6,7 +6,7 @@
 /*   By: cdalla-s <cdalla-s@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/19 09:53:38 by cdalla-s      #+#    #+#                 */
-/*   Updated: 2022/03/19 11:55:54 by cdalla-s      ########   odam.nl         */
+/*   Updated: 2022/04/08 12:02:33 by cdalla-s      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include "GNL/get_next_line.h"
 # include <mlx.h>
-# include <math.h>
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 

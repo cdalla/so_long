@@ -6,8 +6,6 @@ MLX = mlx/libmlx.a
 
 CFLAGS = -Wall -Werror -Wextra 
 
-# OSRC = $(SRC:.c=.o)
-
 SRC =	map_check.c\
 		GNL/get_next_line.c\
 		GNL/get_next_line_utils.c\
@@ -19,9 +17,6 @@ SRC =	map_check.c\
 
 
 all: $(NAME)
-
-# %.o: %.c
-# 	$(CC) $(CFLAGS) -Imlx -c $< -o $@
 	
 $(NAME): $(MLX) $(SRC) 
 	$(CC) $(CFLAGS) $(SRC) -Lmlx -lmlx -Imlx -framework OpenGL -framework Appkit -o $(NAME)

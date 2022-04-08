@@ -6,7 +6,7 @@
 /*   By: cdalla-s <cdalla-s@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/19 10:38:26 by cdalla-s      #+#    #+#                 */
-/*   Updated: 2022/03/25 13:55:17 by cdalla-s      ########   odam.nl         */
+/*   Updated: 2022/04/05 12:39:51 by cdalla-s      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,11 +89,13 @@ void	put_score(t_game *game)
 {	
 	char	*moves;
 	char	*collect;
+	char	*tmp1;
+	char	*tmp2;
 
-	moves = ft_itoa(game->moves);
-	collect = ft_itoa(game->collect);
-	moves = ft_strjoin("Movement count: ", moves);
-	collect = ft_strjoin("Collectible remaining: ", collect);
+	tmp1 = ft_itoa(game->moves);
+	tmp2 = ft_itoa(game->collect);
+	moves = ft_strjoin("Movement count: ", tmp1);
+	collect = ft_strjoin("Collectible remaining: ", tmp2);
 	mlx_string_put(game->mlx, game->win, game->img.width, game->img.height
 		* game->map.height + (game->img.height / 2), 0xcd8500, moves);
 	if (game->collect == 0)
@@ -104,6 +106,8 @@ void	put_score(t_game *game)
 		mlx_string_put(game->mlx, game->win, game->img.width
 			* (game->map.width / 2), game->img.height * game->map.height
 			+ (game->img.height / 2), 0x8b3626, collect);
+	free(tmp1);
+	free(tmp2);
 	free(moves);
 	free(collect);
 }
