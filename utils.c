@@ -6,7 +6,7 @@
 /*   By: cdalla-s <cdalla-s@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/19 11:03:45 by cdalla-s      #+#    #+#                 */
-/*   Updated: 2022/04/08 12:02:01 by cdalla-s      ########   odam.nl         */
+/*   Updated: 2022/04/08 13:44:29 by cdalla-s      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,15 @@ int	get_map_size(char *mapname, t_game *game)
 	int		fd;
 	char	*s;
 
-	s = "";
 	fd = open(mapname, O_RDONLY);
 	if (fd < 1)
 		return (1);
-	game->map.height = 0;
+	s = get_next_line(fd);
+	if (!s)
+		return (1);
+	game->map.height = 1;
+	free(s);
+	s = "";
 	while (s)
 	{
 		s = get_next_line(fd);

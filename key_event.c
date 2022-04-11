@@ -6,7 +6,7 @@
 /*   By: cdalla-s <cdalla-s@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/19 10:03:54 by cdalla-s      #+#    #+#                 */
-/*   Updated: 2022/03/22 11:14:09 by cdalla-s      ########   odam.nl         */
+/*   Updated: 2022/04/08 13:40:39 by cdalla-s      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int	key_event(int key, t_game *game)
 {
 	if (key == 53 || (game->collect == 0 && game->map.map_text
-			[game->player.pos_y][game->player.pos_x] == 'E' && key))
+			[game->player.pos_y][game->player.pos_x] == 'E'))
 		close_game(game);
 	else if (key == 13 && valid(key, game) == 0 && collect(key, game) == 0)
 	{

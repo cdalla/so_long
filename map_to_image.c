@@ -6,7 +6,7 @@
 /*   By: cdalla-s <cdalla-s@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/19 10:38:26 by cdalla-s      #+#    #+#                 */
-/*   Updated: 2022/04/05 12:39:51 by cdalla-s      ########   odam.nl         */
+/*   Updated: 2022/04/08 13:39:53 by cdalla-s      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,13 +115,11 @@ void	put_score(t_game *game)
 void	game_end(t_game *game)
 {
 	char	*win;
-	char	*loss;
 	int		x;
 	int		y;
 
 	y = 1;
 	win = "WINNER";
-	loss = "LOSER";
 	while (y < game->map.width)
 	{
 		x = 1;
